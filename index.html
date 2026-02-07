@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monexa Finance & Tech | Believe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root { --primary: #004d40; --gold: #ffd700; --blue: #2980b9; --light: #f4f4f4; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
+        body { background: var(--light); color: #333; }
+
+        /* Navbar */
+        nav { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo span { color: var(--gold); }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav a { color: white; text-decoration: none; }
+        nav a:hover { color: var(--gold); }
+
+        /* Hero */
+        .hero { background: linear-gradient(rgba(0,77,64,0.9), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1565514020176-dbf227741e33?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 20px; }
+        .btn { padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; }
+        .btn-gold { background: var(--gold); color: var(--primary); }
+
+        /* Sections */
+        .section { padding: 60px 10%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+        
+        /* Footer */
+        footer { background: var(--primary); color: white; text-align: center; padding: 40px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Monexa <span>Believe</span></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="calculator.html">Loan Calculator</a></li>
+            <li><a href="careers.html">Careers</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>Monexa Finance Believe</h1>
+        <p style="margin: 20px 0; font-size: 1.2rem;">Financial Growth & Tech Innovation in One Place.</p>
+        <a href="calculator.html" class="btn btn-gold">Check Loan Eligibility</a>
+    </div>
+
+    <section class="section">
+        <h2 style="text-align: center; color: var(--primary);">Our Financial Products</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-coins"></i>
+                <h3>Gold Loan</h3>
+                <p>Instant cash against gold.</p>
+                <a href="calculator.html" style="color:var(--blue); font-weight:bold;">Calculate Value &rarr;</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-home"></i>
+                <h3>Home Loan</h3>
+                <p>Low interest rates for your dream home.</p>
+                <a href="calculator.html" style="color:var(--blue); font-weight:bold;">Check EMI &rarr;</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-briefcase"></i>
+                <h3>Business Loan</h3>
+                <p>Expand your business today.</p>
+                <a href="calculator.html" style="color:var(--blue); font-weight:bold;">Check Eligibility &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #eef2f5;">
+        <h2 style="text-align: center; color: var(--blue);">IT & Development Services</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-laptop-code" style="color:var(--blue)"></i>
+                <h3>Web Development</h3>
+                <p>We build websites for external firms.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-mobile-alt" style="color:var(--blue)"></i>
+                <h3>App Development</h3>
+                <p>Android & iOS Solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>HR Manager:</strong> Preet Singh</p>
+        <p>Email: monexa.finplus@gmail.com | WhatsApp: 7976887496</p>
+        <p>&copy; 2026 Monexa Finance Believe</p>
+    </footer>
+
+</body>
+</html>

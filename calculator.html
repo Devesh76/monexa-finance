@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator | Monexa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reusing basic styles for consistency */
+        :root { --primary: #004d40; --gold: #ffd700; --light: #f4f4f4; }
+        body { font-family:'Segoe UI', sans-serif; background: var(--light); padding-bottom: 50px; }
+        nav { background: var(--primary); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; color: white;}
+        nav a { color: white; text-decoration: none; font-weight: bold; margin-left: 20px;}
+        
+        .container { max-width: 800px; margin: 50px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { color: var(--primary); text-align: center; margin-bottom: 20px; }
+        
+        .tabs { display: flex; border-bottom: 2px solid #ddd; margin-bottom: 20px; }
+        .tab-btn { flex: 1; padding: 15px; background: none; border: none; font-size: 1.1rem; cursor: pointer; font-weight: bold; color: #666; }
+        .tab-btn.active { color: var(--primary); border-bottom: 4px solid var(--primary); }
+        
+        .calculator-box { display: none; }
+        .calculator-box.active { display: block; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
+        
+        .result-box { background: #e0f2f1; padding: 20px; border-radius: 5px; margin-top: 20px; text-align: center; display: none; }
+        .result-value { font-size: 2rem; color: var(--primary); font-weight: bold; }
+        
+        .btn { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; font-size: 1.1rem; border-radius: 5px; cursor: pointer; }
+        .btn:hover { background: #00332a; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Monexa Finance</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="careers.html">Careers</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Financial Calculator</h2>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('emi')">EMI Calculator</button>
+            <button class="tab-btn" onclick="switchTab('gold')">Gold Loan Value</button>
+        </div>
+
+        <div id="emi" class="calculator-box active">
+            <div class="form-group">
+                <label>Loan Amount (INR)</label>
+                <input type="number" id="emiAmount" placeholder="e.g. 500000">
+            </div>
+            <div class="form-group">
+                <label>Interest Rate (% per year)</label>
+                <input type="number" id="emiRate" placeholder="e.g. 8.5">
+            </div>
+            <div class="form-group">
+                <label>Tenure (Years)</label>
+                <input type="number" id="emiYears" placeholder="e.g. 5">
+            </div>
+            <button class="btn" onclick="calculateEMI()">Calculate EMI</button>
+
+            <div id="emiResult" class="result-box">
+                <p>Monthly EMI</p>
+                <div class="result-value" id="monthlyEmiDisplay">₹0</div>
+                <p style="margin-top:10px;">Total Amount Payable: <span id="totalAmountDisplay">₹0</span></p>
+            </div>
+        </div>
+
+        <div id="gold" class="calculator-box">
+            <div class="form-group">
+                <label>Gold Weight (in Grams)</label>
+                <input type="number" id="goldWeight" placeholder="e.g. 20">
+            </div>
+            <div class="form-group">
+                <label>Purity (Carats)</label>
+                <select id="goldCarat">
+                    <option value="18">18 Carat (75% Purity)</option>
+                    <option value="22">22 Carat (91.6% Purity)</option>
+                    <option value="24">24 Carat (99.9% Purity)</option>
+                </select>
+            </div>
+            <button class="btn" style="background:var(--gold); color:black;" onclick="calculateGoldLoan()">Check Loan Value</button>
+
+            <div id="goldResult" class="result-box" style="background:#fffbe6;">
+                <p>Eligible Loan Amount</p>
+                <div class="result-value" id="goldValueDisplay" style="color:#d4af37;">₹0</div>
+                <p style="font-size:0.9rem;">*Approx value based on current market rates.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

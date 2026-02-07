@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Monexa</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        :root { --primary: #004d40; --light: #f4f4f4; }
+        body { font-family:'Segoe UI', sans-serif; background: var(--light); }
+        
+        nav { background: var(--primary); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; color: white;}
+        nav a { color: white; text-decoration: none; font-weight: bold; margin-left: 20px;}
+
+        .container { max-width: 700px; margin: 40px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); margin-bottom: 10px; }
+        
+        .job-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 5px; border-left: 5px solid var(--primary); }
+        
+        input, select, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
+        
+        .submit-btn { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; cursor: pointer; font-size: 1.1rem; }
+        .submit-btn:hover { background: #00332a; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Monexa Careers</div>
+        <div><a href="index.html">Home</a></div>
+    </nav>
+
+    <div class="container">
+        <h1>Join Our Team</h1>
+        <p style="text-align:center; margin-bottom:30px;">Apply for Jobs or Internships</p>
+
+        <div class="job-card">
+            <h3>📢 Current Openings</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Loan Recovery Agent (Jaipur)</li>
+                <li>Frontend Developer (Internship)</li>
+                <li>Sales Executive</li>
+            </ul>
+        </div>
+
+        <form id="jobForm" onsubmit="sendJobApplication(event)">
+            <label>Full Name</label>
+            <input type="text" id="jobName" required>
+
+            <label>Email Address</label>
+            <input type="email" id="jobEmail" required>
+
+            <label>Phone Number</label>
+            <input type="tel" id="jobPhone" required>
+
+            <label>Applying For</label>
+            <select id="jobRole">
+                <option value="Internship">Internship</option>
+                <option value="Loan Officer">Loan Officer</option>
+                <option value="Developer">Web/App Developer</option>
+            </select>
+
+            <label>Resume Link (Google Drive/LinkedIn)</label>
+            <input type="url" id="jobResume" placeholder="Paste link here" required>
+
+            <button type="submit" class="submit-btn" id="btnText">Submit Application</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
