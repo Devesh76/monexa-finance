@@ -3,42 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monexa Finance & Tech | Believe</title>
+    <title>Monexa Financial Services Pvt Ltd</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
-        :root { --primary: #004d40; --gold: #ffd700; --blue: #2980b9; --light: #f4f4f4; }
+        :root { --primary: #004d40; --gold: #ffd700; --blue: #2980b9; --light: #f4f4f4; --dark: #333; }
         * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
-        body { background: var(--light); color: #333; }
+        body { background: var(--light); color: var(--dark); }
 
         /* Navbar */
         nav { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: bold; }
+        .logo { font-size: 1.4rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
         .logo span { color: var(--gold); }
         nav ul { list-style: none; display: flex; gap: 20px; }
-        nav a { color: white; text-decoration: none; }
+        nav a { color: white; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
         nav a:hover { color: var(--gold); }
 
         /* Hero */
-        .hero { background: linear-gradient(rgba(0,77,64,0.9), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1565514020176-dbf227741e33?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 20px; }
-        .btn { padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; }
+        .hero { 
+            background: linear-gradient(rgba(0,77,64,0.9), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); 
+            background-size: cover; 
+            height: 85vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            color: white; 
+            padding: 20px; 
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { max-width: 700px; line-height: 1.6; margin-bottom: 30px; font-size: 1.1rem; }
+        .btn { padding: 12px 30px; border-radius: 4px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; transition: 0.3s; }
         .btn-gold { background: var(--gold); color: var(--primary); }
+        .btn-gold:hover { background: #e6c200; }
 
-        /* Sections */
+        /* About Section */
+        .about-section { padding: 60px 10%; background: white; text-align: center; }
+        .about-section h2 { color: var(--primary); margin-bottom: 20px; }
+        .about-section p { max-width: 800px; margin: 0 auto; line-height: 1.8; color: #555; }
+
+        /* Services Grid */
         .section { padding: 60px 10%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: white; padding: 30px; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; border-bottom: 3px solid transparent; }
+        .card:hover { transform: translateY(-5px); border-bottom: 3px solid var(--gold); }
+        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
         
         /* Footer */
-        footer { background: var(--primary); color: white; text-align: center; padding: 40px; }
+        footer { background: #1a1a1a; color: #ccc; padding: 50px 10%; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 30px; }
+        .footer-col h3 { color: white; margin-bottom: 20px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; }
+        .footer-col p { margin-bottom: 10px; line-height: 1.6; }
+        .footer-col i { width: 25px; color: var(--gold); }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Monexa <span>Believe</span></div>
+        <div class="logo">Monexa <span>Financial Services</span></div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="calculator.html">Loan Calculator</a></li>
@@ -47,55 +70,94 @@
     </nav>
 
     <div class="hero">
-        <h1>Monexa Finance Believe</h1>
-        <p style="margin: 20px 0; font-size: 1.2rem;">Financial Growth & Tech Innovation in One Place.</p>
-        <a href="calculator.html" class="btn btn-gold">Check Loan Eligibility</a>
+        <h1>Monexa Financial Services Pvt. Ltd.</h1>
+        <p>Your trusted partner for comprehensive financial solutions and technological innovation. We operate on a 24x7 basis to fuel your growth, from securing capital to building digital assets.</p>
+        <a href="calculator.html" class="btn btn-gold">Explore Loan Options</a>
     </div>
 
-    <section class="section">
+    <section class="about-section">
+        <h2>Who We Are</h2>
+        <p>
+            Monexa Financial Services Private Limited is a premier institution dedicated to empowering dreams. 
+            Headquartered in Jaipur, we bridge the gap between financial necessity and technological advancement. 
+            Our expertise spans across providing flexible <strong>Home, Gold, and Business loans</strong>, while our technology division 
+            specializes in high-end <strong>Web Application Development</strong> and digital strategy for modern enterprises.
+        </p>
+    </section>
+
+    <section class="section" style="background: var(--light);">
         <h2 style="text-align: center; color: var(--primary);">Our Financial Products</h2>
+        <p style="text-align: center; margin-top: 10px; color: #666;">Tailored financial support for every stage of life.</p>
         <div class="grid">
             <div class="card">
                 <i class="fas fa-coins"></i>
                 <h3>Gold Loan</h3>
-                <p>Instant cash against gold.</p>
-                <a href="calculator.html" style="color:var(--blue); font-weight:bold;">Calculate Value &rarr;</a>
+                <p>Unlock the value of your assets with our high-value Gold Loans. Instant liquidity with secure storage.</p>
+                <a href="calculator.html" style="display:block; margin-top:15px; color:var(--blue); font-weight:bold; text-decoration:none;">Calculate Value &rarr;</a>
             </div>
             <div class="card">
                 <i class="fas fa-home"></i>
                 <h3>Home Loan</h3>
-                <p>Low interest rates for your dream home.</p>
-                <a href="calculator.html" style="color:var(--blue); font-weight:bold;">Check EMI &rarr;</a>
+                <p>Step into your dream home with our competitive interest rates and minimal paperwork processing.</p>
+                <a href="calculator.html" style="display:block; margin-top:15px; color:var(--blue); font-weight:bold; text-decoration:none;">Check EMI &rarr;</a>
             </div>
             <div class="card">
-                <i class="fas fa-briefcase"></i>
-                <h3>Business Loan</h3>
-                <p>Expand your business today.</p>
-                <a href="calculator.html" style="color:var(--blue); font-weight:bold;">Check Eligibility &rarr;</a>
+                <i class="fas fa-chart-line"></i>
+                <h3>Business Finance</h3>
+                <p>Capital solutions to expand your business horizons. We support startups and established firms alike.</p>
+                <a href="calculator.html" style="display:block; margin-top:15px; color:var(--blue); font-weight:bold; text-decoration:none;">Check Eligibility &rarr;</a>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background: #eef2f5;">
+    <section class="section" style="background: white;">
         <h2 style="text-align: center; color: var(--blue);">IT & Development Services</h2>
+        <p style="text-align: center; margin-top: 10px; color: #666;">We build robust digital infrastructure for external firms.</p>
         <div class="grid">
             <div class="card">
                 <i class="fas fa-laptop-code" style="color:var(--blue)"></i>
-                <h3>Web Development</h3>
-                <p>We build websites for external firms.</p>
+                <h3>Web Application Development</h3>
+                <p>Custom software solutions and responsive websites built by our expert A2 Grade developers.</p>
             </div>
             <div class="card">
-                <i class="fas fa-mobile-alt" style="color:var(--blue)"></i>
-                <h3>App Development</h3>
-                <p>Android & iOS Solutions.</p>
+                <i class="fas fa-shield-alt" style="color:var(--blue)"></i>
+                <h3>Compliance & Security</h3>
+                <p>Adhering to Global Essential Compliance & Security Policies to ensure your data is always protected.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-headset" style="color:var(--blue)"></i>
+                <h3>24x7 Support</h3>
+                <p>Our operations run round-the-clock to provide continuous maintenance and IT support.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p><strong>HR Manager:</strong> Preet Singh</p>
-        <p>Email: monexa.finplus@gmail.com | WhatsApp: 7976887496</p>
-        <p>&copy; 2026 Monexa Finance Believe</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Registered Office</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Adarsh Plaza</strong><br>
+                Plot CST No 22-A/28, Durgapura<br>
+                Jaipur, Rajasthan - 302018, India</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone-alt"></i> +91 141-22-546789331</p>
+                <p><i class="fab fa-whatsapp"></i> +91 79768 87496</p>
+                <p><i class="fas fa-envelope"></i> monexa.finplus@gmail.com</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <p><a href="careers.html" style="color:#ccc; text-decoration:none;">Careers</a></p>
+                <p><a href="calculator.html" style="color:#ccc; text-decoration:none;">Loan Calculator</a></p>
+                <p><a href="#" style="color:#ccc; text-decoration:none;">Privacy Policy</a></p>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid #333; padding-top: 20px;">
+            <p>&copy; 2026 Monexa Financial Services Private Limited. All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>
